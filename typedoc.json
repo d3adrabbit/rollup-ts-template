@@ -1,0 +1,8 @@
+{
+  "entryPoints": ["./src/index.ts"],
+  "includes": "src/*.ts",
+  "out": "docs",
+  "readme": "none",
+  "includeVersion": true,
+  "disableSources": false
+}
