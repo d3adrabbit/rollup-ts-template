@@ -4,16 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rollup --config",
+    "build": "npm run lint && rollup --config",
     "test": "jest",
-    "lint": "",
-    "test:prod": "npm run lint && npm run test --no-cache",
+    "lint": "eslint ./src",
     "doc": "typedoc --options typedoc.json",
-    "release": "esno ./toolkit/release.ts",
     "commit": "git cz"
   },
   "lint-staged": {
-    "src/**/*.{js,ts}": [
+    "src/**/*.{ts}": [
       "prettier --write",
       "git add"
     ]
