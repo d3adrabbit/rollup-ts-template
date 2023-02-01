@@ -8,22 +8,22 @@
     "test": "jest",
     "lint": "eslint ./src",
     "doc": "typedoc --options typedoc.json",
-    "commit": "git cz"
+    "commit": "git cz",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{ts}": [
-      "prettier --write",
-      "git add"
+    "src/**/*.{js,json,css,md}": [
+      "prettier --write"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "repository": {
@@ -47,7 +47,7 @@
     "commitizen": "^4.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.33.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "jest": "^29.4.1",
     "jest-config": "^29.4.1",
     "lint-staged": "^13.1.0",
